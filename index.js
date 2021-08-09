@@ -23,11 +23,14 @@ function cambiarFiltroEstado(event) {
 
 //
 
+function guardarTareas() {
+  localStorage.setItem('tareas', JSON.stringify(array));
+}
+
 function borrarTodo() {
   array.splice(0, array.length);
 
-  localStorage.setItem('tareas', JSON.stringify(array));
-
+  guardarTareas();
   pintarLista();
 }
 
@@ -39,8 +42,7 @@ function borrarTareasCompletadas() {
     }
   }
 
-  localStorage.setItem('tareas', JSON.stringify(array));
-
+  guardarTareas();
   pintarLista();
 }
 
@@ -71,8 +73,7 @@ function agregarTarea() {
 function agregarTareaALista(tarea) {
   array.push(tarea);
 
-  localStorage.setItem('tareas', JSON.stringify(array));
-
+  guardarTareas();
   pintarLista();
 }
 
@@ -99,8 +100,7 @@ function pintarLista() {
           tarea.estado = "pendiente";
         }
 
-        localStorage.setItem("tareas", JSON.stringify(array));
-
+        guardarTareas();
         pintarLista();
       };
 
@@ -123,8 +123,7 @@ function pintarLista() {
 
         array = nuevoArray;
 
-        localStorage.setItem('tareas', JSON.stringify(array));
-
+        guardarTareas();
         pintarLista();
       };
 
