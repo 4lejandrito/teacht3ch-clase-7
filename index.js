@@ -24,8 +24,10 @@ function compararTareas(tareaA, tareaB) {
   }
 }
 
+let criterioDeOrden = "original";
+
 function ordenarTareasPorEstado() {
-  array.sort(compararTareas);
+  criterioDeOrden = "estado";
 
   pintarLista();
 }
@@ -106,7 +108,13 @@ function pintarLista() {
   const ul = document.getElementsByTagName("ul")[0];
   ul.innerHTML = "";
 
-  for (const tarea of array) {
+  const arrayOrdenado = [...array];
+
+  if (criterioDeOrden === 'estado') {
+    arrayOrdenado.sort(compararTareas);
+  }
+
+  for (const tarea of arrayOrdenado) {
     // 6. Solo pintamos las tareas con el estado correcto.
     if (filtroEstado === "todas" || filtroEstado === tarea.estado) {
       const li = document.createElement("li");
