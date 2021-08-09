@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lista de tareas TeachT3ch</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h2>Organizador de tareas</h2>
+        <input
+          id="nombre_tarea"
+          type="text"
+          placeholder="Nueva tarea"
+          name="nombre_tarea"
+        />
+        <button id="agregar">Agregar</button>
+        <select id="filtro_estado">
+          <option value="todas">Todas</option>
+          <option value="completada">Completadas</option>
+          <option value="pendiente">Pendientes</option>
+        </select>
+      </header>
+      <ul id="lista"></ul>
+      <button id="borrar_todo">Borrar todas las tareas</button>
+      <button id="borrar_completadas">Borrar tareas completadas</button>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

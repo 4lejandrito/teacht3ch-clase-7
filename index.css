@@ -1,0 +1,105 @@
+html {
+  font-family: arial;
+  background: #cfc5bb;
+  background-image: url(https://d2v8skpstyl8bm.cloudfront.net/products/images/product/3/e/3ec98a8a-c72b-3e99-9e16-3c9011c12dac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  padding: 2em 0;
+}
+
+main {
+  width: 60%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: Arial;
+  font-size: 36px;
+  font-weight: lighter;
+}
+
+ul {
+  margin: 10px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.8em 0.5em 0.7em 1.5em;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  color: #29191ae6;
+}
+
+li.completed .content {
+  text-decoration: line-through;
+}
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+li .content {
+  flex-grow: 1;
+}
+
+.close {
+  padding: 12px;
+}
+
+.close:hover {
+  color: #f44336;
+}
+
+input,
+button {
+  margin: 0;
+  border: none;
+  padding: 0.7em;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input,
+select {
+  border-radius: 0.5em 0 0 0.5em;
+  width: 60%;
+}
+
+select {
+  background: white;
+  padding: 0.7em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+  width: 100%;
+  border: none;
+}
+
+button {
+  width: 23%;
+  cursor: pointer;
+  border-radius: 0 0.5em 0.5em 0;
+  background-color: burlywood;
+  color: #29191ae6;
+}
+
+button:hover {
+  background-color: #cfc5bb;
+}
