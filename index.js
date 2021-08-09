@@ -24,10 +24,18 @@ function compararTareas(tareaA, tareaB) {
   }
 }
 
+function compararTareasInversamente(tareaA, tareaB) {
+  return compararTareas(tareaB, tareaA)
+}
+
 let criterioDeOrden = "original";
 
 function ordenarTareasPorEstado() {
-  criterioDeOrden = "estado";
+  if (criterioDeOrden !== 'estado') {
+    criterioDeOrden = "estado";
+  } else {
+    criterioDeOrden = "estado-inv";
+  }
 
   pintarLista();
 }
@@ -112,6 +120,8 @@ function pintarLista() {
 
   if (criterioDeOrden === 'estado') {
     arrayOrdenado.sort(compararTareas);
+  } else if (criterioDeOrden === 'estado-inv') {
+    arrayOrdenado.sort(compararTareasInversamente);
   }
 
   for (const tarea of arrayOrdenado) {
