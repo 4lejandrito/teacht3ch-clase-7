@@ -1,4 +1,9 @@
 let array = [];
+let tareasJSON = localStorage.getItem('tareas');
+if (tareasJSON !== null) {
+  array = JSON.parse(tareasJSON);
+}
+
 document.getElementById("agregar").addEventListener("click", agregarTarea);
 document.getElementById("borrar_todo").addEventListener("click", borrarTodo);
 document
