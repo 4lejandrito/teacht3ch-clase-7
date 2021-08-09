@@ -40,6 +40,16 @@ function ordenarTareasPorEstado() {
   pintarLista();
 }
 
+document
+  .getElementById("restablecer_orden")
+  .addEventListener("click", restablecerOrden);
+
+function restablecerOrden() {
+  criterioDeOrden = "original";
+
+  pintarLista();
+}
+
 // 5. Añadimos un <SELECT> para poder filtrar tareas.
 // (Ver index.html linea 20 e index.css linea 86)
 
