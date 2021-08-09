@@ -10,6 +10,26 @@ document
   .getElementById("borrar_completadas")
   .addEventListener("click", borrarTareasCompletadas);
 
+document
+  .getElementById("ordenar_estado")
+  .addEventListener("click", ordenarTareasPorEstado);
+
+function compararTareas(tareaA, tareaB) {
+  if (tareaA === tareaB) {
+    return 0;
+  } else if (tareaA.estado < tareaB.estado) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+
+function ordenarTareasPorEstado() {
+  array.sort(compararTareas);
+
+  pintarLista();
+}
+
 // 5. Añadimos un <SELECT> para poder filtrar tareas.
 // (Ver index.html linea 20 e index.css linea 86)
 
