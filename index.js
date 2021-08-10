@@ -30,23 +30,30 @@ function compararTareasInversamente(tareaA, tareaB) {
 
 let criterioDeOrden = "original";
 
+let navegadorCriterioOrdenarcion = localStorage.getItem('criterioDeOrden');
+
+if (navegadorCriterioOrdenarcion !== null) {
+  criterioDeOrden = navegadorCriterioOrdenarcion;
+}
+
 function ordenarTareasPorEstado() {
   if (criterioDeOrden !== 'estado') {
     criterioDeOrden = "estado";
   } else {
     criterioDeOrden = "estado-inv";
   }
-
+  localStorage.setItem('criterioDeOrden', criterioDeOrden);
   pintarLista();
 }
 
 document
-  .getElementById("restablecer_orden")
-  .addEventListener("click", restablecerOrden);
+.getElementById("restablecer_orden")
+.addEventListener("click", restablecerOrden);
 
 function restablecerOrden() {
   criterioDeOrden = "original";
-
+  
+  localStorage.setItem('criterioDeOrden', criterioDeOrden);
   pintarLista();
 }
 
@@ -55,13 +62,20 @@ function restablecerOrden() {
 
 let filtroEstado = "todas";
 
+let navegadorFiltroEstado = localStorage.getItem('filtroEstado');
+
+if (navegadorFiltroEstado !== null) {
+  filtroEstado = navegadorFiltroEstado;
+}
+
+
 document
   .getElementById("filtro_estado")
   .addEventListener("change", cambiarFiltroEstado);
 
 function cambiarFiltroEstado(event) {
   filtroEstado = event.target.value;
-
+  localStorage.setItem('filtroEstado', filtroEstado);
   // 7. Pintamos la lista cuando el filtro cambia.
   pintarLista();
 }
